@@ -34,12 +34,50 @@ public class MySet<T>
     public Boolean remove(Integer index)
     {
         Boolean canRemove = false;
+        if(curInteger>= index)
+        {
+            canRemove = true;
+            for (int i = index; i < myArray.length - 1; i++) 
+            {
+                myArray[i] = myArray[i+1];   
+            }
+            curInteger--;
+        }
 
         return canRemove;
+    }
+    private Integer find(Object o)
+    {
+        Integer index = 0;
+        for (int i = 0; i < myArray.length; i++) 
+        {
+            if(myArray[i] == o)
+            {
+                index = i ;
+            }
+            else
+            {
+                index = -1;
+            }
+        }
+        
+        return index;
     }
     public Boolean remove(Object o)
     {
         Boolean canRemove = false;
+        Integer found = find(o);
+        if(found != -1)
+        {
+                remove(found);
+        }
+        else
+        {
+            canRemove = false;
+            return false;
+        }
+        
+       
         return canRemove;
     }
     public Boolean contains(Object o)
