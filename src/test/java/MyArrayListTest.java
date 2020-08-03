@@ -50,7 +50,7 @@ public class MyArrayListTest
         myArrayList.add(type);
         myArrayList.add(type1);
         //when
-        myArrayList.remove(2);
+        myArrayList.remove(1);
         Integer expected = 1; 
         Integer actual = myArrayList.size();
         //Then

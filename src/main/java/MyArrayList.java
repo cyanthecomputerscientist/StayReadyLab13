@@ -41,7 +41,11 @@ public class MyArrayList <T>
     }
     public Boolean remove(Integer index)
     {
-        Boolean canRemove = true;
+        Boolean canRemove = false;
+        if (currentElement < index) 
+        {
+            canRemove = true;    
+        }
         
         return canRemove;
     }
