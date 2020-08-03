@@ -42,9 +42,16 @@ public class MyArrayList <T>
     public Boolean remove(Integer index)
     {
         Boolean canRemove = false;
-        if (currentElement < index) 
+        Integer indextoRemove = index;
+        if (currentElement >= index) 
         {
-            canRemove = true;    
+            canRemove = true; 
+            for (int i = indextoRemove; i < myArray.length -1; i++) 
+            {
+                myArray[i] = myArray[i+1];    
+            }
+
+            currentElement--;
         }
         
         return canRemove;

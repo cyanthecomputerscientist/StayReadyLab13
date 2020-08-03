@@ -1,4 +1,3 @@
-import java.util.function.BiPredicate;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -35,6 +34,7 @@ public class MySetTest
         MySet<Object> mySet = new MySet<>();
         Integer type =10;
         Object[] array = mySet.getArray(); 
+        mySet.add(type);
         //When
         Object actual = array[0];
         Object expected = type;

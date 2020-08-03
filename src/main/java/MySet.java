@@ -17,12 +17,24 @@ public class MySet<T>
     public Boolean add(T type)
     {
         Boolean canAdd = false;
+        if (contains(type) == false) 
+        {
+            canAdd = true;
+            myArray[curInteger] = type;
+            curInteger++;    
+        }
+        else
+        {
+            canAdd = false; 
+            return canAdd;
+        }
 
         return canAdd;
     }
     public Boolean remove(Integer index)
     {
         Boolean canRemove = false;
+
         return canRemove;
     }
     public Boolean remove(Object o)
@@ -33,16 +45,30 @@ public class MySet<T>
     public Boolean contains(Object o)
     {
         Boolean doesContain = false;
+        for (int i = 0; i < myArray.length; i++) 
+        {
+            if(myArray[i] == o)
+            {
+                doesContain = true;
+                return doesContain;
+            }    
+        }
         return doesContain;
     }
     public Boolean isEmpty()
     {
         Boolean isEmpty = true;
+        if(this.size() != 0)
+        {
+            isEmpty= false;
+            return isEmpty;
+        }
+
         return isEmpty;
     }
     public Integer size()
     {
-        Integer s = 0;
+        Integer s = curInteger;
         return s;
     }
     public T[] getArray()
